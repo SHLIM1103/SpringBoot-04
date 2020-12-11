@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>상품 등록</h1>
+    <form>
+        <div>
+        <input id="productName" type="text" name="productName" class="form-control mt-4 mb-2"
+            placeholder="제품명을 입력하세요" required><br>
+        <input id="price" type="text" name="price" class="form-control mt-4 mb-2"
+            placeholder="판매가격을 입력하세요" required><br>
+        <input id="origin" type="text" name="origin" class="form-control mt-4 mb-2"
+            placeholder="원산지를 입력하세요" required>
+        </div>
+        <button id="regi-btn" class="btn btn-secondary mb-3">제출하기</button>
+        <button id="home-btn">HOME</button>
+    </form>
+    <script>
+        $('#regi-btn').click(e => {
+            e.preventDefault()
+            $.ajax({
+                url: '/menu',
+                type: 'POST',
+                data: JSON.stringify({
+                    productName: $('#productName').val(),
+                    price: $('#price').val(),
+                    from: $('#origin').val(),
+                }),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: d => {
+                    if(d.message === 'SUCCESS'){
+                        alert(`등록 성공`)
+                        location.href='/move/menu/regi'
+                    }else{
+                        alert(`등록 실패! 다시 등록해주세요.`)
+                        location.href='/move/menu/regi'
+                    }
+                },
+                error: e => {alert(`등록 에러발생: ${e}`)}
+            })
+        })
+        
+        $('#home-btn').click(e => {location.href='/'})
+    </script>
+</body>
+</html>

@@ -2,5 +2,7 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.repositories.MenuRepository">
-  
+    <insert id="insert" parameterType="com.example.demo.domains.MenuDTO">
+        insert into menu (product_name, price, origin) values (#{productName}, #{price}, #{origin})
+    </insert>
 </mapper>

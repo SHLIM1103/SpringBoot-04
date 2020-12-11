@@ -2,7 +2,10 @@ package com.example.demo.domains;
 
 import org.springframework.stereotype.Component;
 
-@Component
+import lombok.Getter;
+import lombok.Setter;
+
+@Component @Getter @Setter
 public class MenuDTO {
-    private String product, price, review, interest, cart;
+    private String productName, price, origin;
 }

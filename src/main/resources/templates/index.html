@@ -8,19 +8,22 @@
 </head>
 <body>
     <h1>PRODUCT HOME</h1>
-    <a id="living" href="#">생활용품</a><br>
-    <a id="kitchen" href="#">주방용품</a><br>
-    <a id="drinkware" href="#">음료용품</a><br>
-    <a id="stationary" href="#">문구용품</a><br>
-    <a id="veganfood" href="#">비건식품</a><br>
-    <a id="crawling" href="#">웹크롤링</a>
+    <a id="register" href="#">상품등록</a>
+    <a id="living" href="#">생활용품</a>
+    <a id="kitchen" href="#">주방용품</a>
+    <a id="drinkware" href="#">음료용품</a>
+    <a id="stationary" href="#">문구용품</a>
+    <a id="offline" href="#">오프라인샵</a><br>
+    <a id="crawlingliving" href="#">웹크롤링_living</a>
     <script>
+        $('#register').click(e=>{location.href='/move/menu/regi'})
         $('#living').click(e=>{location.href='/move/menu/living'})
         $('#kitchen').click(e=>{location.href='/move/menu/kitchen'})
         $('#drinkware').click(e=>{location.href='/move/menu/drinkware'})
         $('#stationary').click(e=>{location.href='/move/menu/stationary'})
-        $('#veganfood').click(e=>{locarion.href='/move/menu/veganfood'})
-        $('#crawling').click(e=>{})
-    </script>
+        $('#offline').click(e=>{location.href='/move/menu/offline'})
+        $('#crawlingliving').click(e=>{$.getJSON(`/menu/crawling/living`, d => alert(`등록된 제품수: ${d.count}`))})
+        </script>
+        <!--등록된 제품수에 d.count ? -->
 </body>
 </html>
