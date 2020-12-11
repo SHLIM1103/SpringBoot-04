@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>PRODUCT HOME</h1>
+    <a id="living" href="#">생활용품</a><br>
+    <a id="kitchen" href="#">주방용품</a><br>
+    <a id="drinkware" href="#">음료용품</a><br>
+    <a id="stationary" href="#">문구용품</a><br>
+    <a id="veganfood" href="#">비건식품</a><br>
+    <a id="crawling" href="#">웹크롤링</a>
+    <script>
+        $('#living').click(e=>{location.href='/move/menu/living'})
+        $('#kitchen').click(e=>{location.href='/move/menu/kitchen'})
+        $('#drinkware').click(e=>{location.href='/move/menu/drinkware'})
+        $('#stationary').click(e=>{location.href='/move/menu/stationary'})
+        $('#veganfood').click(e=>{locarion.href='/move/menu/veganfood'})
+        $('#crawling').click(e=>{})
+    </script>
 </body>
 </html>
